@@ -1,0 +1,9 @@
+{
+  "scenario": "RDBMS Outage followed by Cache failure",
+  "signals": [
+    {"component_id": "POSTGRES_PRIMARY", "error_code": "DB_CONN_TIMEOUT", "message": "Primary DB unreachable", "severity": "P0", "metadata": {"host": "db-01"}},
+    {"component_id": "POSTGRES_PRIMARY", "error_code": "DB_CONN_TIMEOUT", "message": "Primary DB unreachable", "severity": "P0", "metadata": {"host": "db-01"}},
+    {"component_id": "CACHE_CLUSTER_01", "error_code": "CACHE_MISS_STORM", "message": "Redis cluster degraded", "severity": "P2", "metadata": {"cluster": "redis-01"}},
+    {"component_id": "API_GATEWAY", "error_code": "UPSTREAM_5XX", "message": "API returning 503s", "severity": "P1", "metadata": {"endpoint": "/checkout"}}
+  ]
+}
